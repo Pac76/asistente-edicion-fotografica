@@ -1,0 +1,15 @@
+{
+  "name": "asistente-edicion-fotografica",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Herramientas iniciales para auditar sesiones RAW/XMP y definir perfiles de edición.",
+  "type": "module",
+  "scripts": {
+    "audit": "node src/cli.js audit",
+    "ui": "node src/server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

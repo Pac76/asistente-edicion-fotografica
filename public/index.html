@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Asistente de edición</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Preparación de material</p>
+          <h1>Auditar una sesión</h1>
+          <p class="subtitle">
+            Comprobá que los RAW y sus ediciones de Lightroom estén listos para
+            construir un perfil.
+          </p>
+        </div>
+        <span class="local-badge">Procesamiento local</span>
+      </header>
+
+      <section class="panel" aria-labelledby="session-heading">
+        <div class="section-heading">
+          <span class="step">1</span>
+          <div>
+            <h2 id="session-heading">Contexto de la sesión</h2>
+            <p>Esta elección le indica al futuro motor qué perfil utilizar.</p>
+          </div>
+        </div>
+
+        <label for="profile">Perfil</label>
+        <div class="profile-row">
+          <select id="profile">
+            <option value="">Cargando perfiles…</option>
+          </select>
+          <input
+            id="custom-profile"
+            class="hidden"
+            type="text"
+            maxlength="80"
+            placeholder="Nombre del perfil"
+          />
+          <button id="save-profile" class="secondary hidden" type="button">
+            Guardar perfil
+          </button>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="folder-heading">
+        <div class="section-heading">
+          <span class="step">2</span>
+          <div>
+            <h2 id="folder-heading">Carpeta con RAW y XMP</h2>
+            <p>La auditoría solamente lee los archivos; no modifica nada.</p>
+          </div>
+        </div>
+
+        <label for="folder">Ubicación</label>
+        <div class="folder-row">
+          <input
+            id="folder"
+            type="text"
+            spellcheck="false"
+            placeholder="C:\Fotos\Evento"
+          />
+          <button id="browse" class="secondary" type="button">
+            Elegir carpeta
+          </button>
+        </div>
+
+        <button id="audit" class="primary" type="button">
+          Analizar material
+        </button>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section id="results" class="panel hidden" aria-labelledby="results-heading">
+        <div class="results-title">
+          <div>
+            <p class="eyebrow">Resultado</p>
+            <h2 id="results-heading">Estado del material</h2>
+          </div>
+          <span id="result-badge" class="result-badge"></span>
+        </div>
+
+        <div id="metrics" class="metrics"></div>
+
+        <div class="details-grid">
+          <article>
+            <h3>Formatos RAW</h3>
+            <div id="formats" class="list-box"></div>
+          </article>
+          <article>
+            <h3>Problemas encontrados</h3>
+            <div id="problems" class="list-box"></div>
+          </article>
+          <article>
+            <h3>Ajustes detectados</h3>
+            <div id="settings" class="list-box"></div>
+          </article>
+        </div>
+
+        <a id="download-report" class="download hidden" href="#">
+          Descargar reporte completo
+        </a>
+      </section>
+
+      <section class="panel" aria-labelledby="history-heading">
+        <div class="section-heading">
+          <span class="step">3</span>
+          <div>
+            <h2 id="history-heading">Historial local</h2>
+            <p>Últimas auditorías guardadas en esta computadora.</p>
+          </div>
+        </div>
+        <div id="history" class="history">
+          <p class="empty">Todavía no hay auditorías.</p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

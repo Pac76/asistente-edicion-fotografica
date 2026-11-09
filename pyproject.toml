@@ -1,0 +1,32 @@
+[project]
+name = "foto-engine"
+version = "0.1.0"
+description = "Motor local de análisis y aprendizaje para perfiles fotográficos."
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "defusedxml>=0.7.1",
+    "joblib>=1.5.3",
+    "numpy>=2.0",
+    "pillow>=12.3.0",
+    "pydantic>=2",
+    "rawpy>=0.27.0",
+    "scikit-learn>=1.9.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.16.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["engine-tests"]
+pythonpath = ["engine"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]

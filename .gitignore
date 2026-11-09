@@ -1,0 +1,14 @@
+node_modules/
+reportes/
+datos-usuarios/
+assets/
+runtime/
+runtime-test/
+tools/exiftool/
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.log
+.DS_Store
+Thumbs.db
